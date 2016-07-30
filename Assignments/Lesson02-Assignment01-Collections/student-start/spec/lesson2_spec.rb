@@ -7,7 +7,7 @@ describe "lesson2" do
     result = `ruby module2_lesson2_formative.rb`
     lines = result.split("\n")
     numbers = []
-    
+
     # process the last line of output
     values = lines[lines.count-1].split(",").each { |v|
         number = /([0-9]+)/.match(v).to_s.to_i
@@ -27,7 +27,7 @@ describe "lesson2" do
     it "is expected to be sorted in descending order" do
       expect(numbers).to eq numbers.sort.reverse
     end
-    
+
     it "should not contain numbers not divisible by 3" do
       numbers.each do |n|
         expect(n % 3).to be == 0
